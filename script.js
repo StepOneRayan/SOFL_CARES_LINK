@@ -1,6 +1,4 @@
-const powerAutomateURL = process.env.POWER_AUTOMATE_URL;
-
-if (typeof config !== 'undefined' && config.surveyURL && powerAutomateURL) {
+if (typeof config !== 'undefined' && config.surveyURL && config.powerAutomateURL) {
 // Get the ID from the URL
     const urlHash = window.location.hash;
     const id = urlHash ? urlHash.substring(1) : null;
@@ -8,7 +6,7 @@ if (typeof config !== 'undefined' && config.surveyURL && powerAutomateURL) {
     console.log("ID: " + id);
 
     if (id) {
-        fetch(powerAutomateURL, {
+        fetch(config.powerAutomateURL, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
