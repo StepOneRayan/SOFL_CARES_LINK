@@ -1,4 +1,6 @@
-if (typeof config !== 'undefined' && config.powerAutomateURL && config.surveyURL) {
+const powerAutomateURL = process.env.POWER_AUTOMATE_URL;
+
+if (typeof config !== 'undefined' && config.surveyURL && powerAutomateURL) {
 // Get the ID from the URL
     const urlHash = window.location.hash;
     const id = urlHash ? urlHash.substring(1) : null;
